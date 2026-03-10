@@ -5,10 +5,10 @@ async function findByEmail(email) {
     return rows[0];
 }
 
-async function createUser(name, email, passaword_hash) {
+async function createUser(name, email, password_hash) {
     const [result] = await db.query(
-        "INSERT INTO users (name, email, passaword_hash) VALUES (?, ?, ?)",
-        [name, email, passaword_hash]
+        "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)",
+        [name, email, password_hash]
     );
     return result.insertId;
 }
