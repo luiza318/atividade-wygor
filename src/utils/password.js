@@ -4,16 +4,16 @@ async function hashPassword(password) {
     return bcrypt.hash(password, 10); 
 };
 
+async function comparePassword(password, hash) {
+    return bcrypt.compare(password, hash);
+};
+
+module.exports = {hashPassword, comparePassword};
+
 /*async function hashPassword(plainPassword) {
  const salt = await bcrypt.genSalt(10);
   return bcrypt.hash(plainPassword, salt);
 } Tem esse outro jeito que cria manualmente mas se usar o bcrypt ele ja faz isso automaticamente*/
-
-async function comparePassword(password, hash) {
-    return bcrypt.compare(password. hash);
-};
-
-module.exports = {hashPassword, comparePassword};
 
 // bcrypt cria o hash que criptografa a senha e verifica se ela é segura 
 
